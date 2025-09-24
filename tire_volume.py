@@ -28,7 +28,7 @@ w is the width of the tire in millimeters,
 a is the aspect ratio of the tire, and
 d is the diameter of the wheel in inches."""
 
-
+# my notes
 # What: Import Python standard math module to access constants and functions
 # Insert before any calculations that use pi or math helpers
 # where: at the very top
