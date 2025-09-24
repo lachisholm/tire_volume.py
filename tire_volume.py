@@ -16,7 +16,7 @@
 #   a = aspect ratio (percent, user input)
 #   d = wheel diameter (inches, user input)
 # DOES/MEANS:
-#   This is the exact formula we’ll implement in code below.
+#   This is the exact formula we will implement in code below.
 # ─────────────────────────────────────────────────────────────────────────────
 
 or $$ v=\frac{\pi\, w^2\, a\,(w a + 2{,}540\, d)}{10{,}000{,}000{,}000} $$
