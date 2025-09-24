@@ -31,6 +31,8 @@ d is the diameter of the wheel in inches."""
 
 import math
 
+
+# ***************************TIRE*******************************
 # capture the width of tire
 w= float(input("Enter the width of the tire in mm (ex. 205): "))
 
@@ -45,4 +47,23 @@ v = (math.pi * (w ** 2) * a * (w * a +2540 * d)) / 10_000_000_000
 
 # uses an f string to insert v and format it to 2 decimals; leading "\n" adds the blank line shown in the sample
 print(f"\nThe approximate volume is {v:.2f} liters")
+
+
+
+#**************************DATETIME****************************
+
+# DateTime - Makes datetime.now() available to fetch today's date from the os clock
+from datetime import datetime
+
+# Calls datetime.now() to get a datetime object we can format as YYYY-MM-DD when writing the file
+current_dt = datetime.now()
+
+# Provides a file handle named 'volumes_file', writable file
+with open("volumes.txt", "at") as volumes_file:
+    print(f'{current_dt:%Y-%m-%d}, {w}, {a}, {d}, {v:.2f}', file=volumes_file)
+    
+    
+
+
+
 
