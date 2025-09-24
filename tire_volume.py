@@ -62,7 +62,7 @@ current_dt = datetime.now()
 with open("volumes.txt", "at") as volumes_file:
     print(f'{current_dt:%Y-%m-%d}, {w}, {a}, {d}, {v:.2f}', file=volumes_file)
     
-print(f"(Saved to) {Path('volumes.text').resolve()}")
+print(f"(Saved to) {Path('volumes.txt').resolve()}")
 
 
 
