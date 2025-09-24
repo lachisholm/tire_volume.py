@@ -96,7 +96,7 @@ while again =="yes":
     # Ask the user if they want to test another set (condition controlled loop)
     # End of each iteration, after writing to file
 
-again = input("Do you want to enter another set? (yes/no): ").strip().lower()
+
 
 
 
