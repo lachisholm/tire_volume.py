@@ -29,40 +29,55 @@ a is the aspect ratio of the tire, and
 d is the diameter of the wheel in inches."""
 
 
+# What: Import Python standard math module to access constants and functions
+# Insert before any calculations that use pi or math helpers
+# where: at the very top
+# Does/Means: makes math.pi and other math ulitities available
 import math
+
 from pathlib import Path
 
+
+again = "yes"
+
+while again =="yes":
+
 # ***************************TIRE*******************************
-# capture the width of tire
-w= float(input("Enter the width of the tire in mm (ex. 205): "))
+    # capture the width of tire
+    w = float(input("Enter the width of the tire in mm (ex. 205): "))
 
-# capture the aspect ratio
-a = float(input("Enter the aspect ratio of the tire (ex 60): "))
+    # capture the aspect ratio
+    a = float(input("Enter the aspect ratio of the tire (ex 60): "))
 
-#Shows the exact assignment prompt; float() converts the text to a numeric value
-d = float(input("Enter the diameter of the wheel in inches (ex 15): "))
+    #Shows the exact assignment prompt; float() converts the text to a numeric value
+    d = float(input("Enter the diameter of the wheel in inches (ex 15): "))
 
-# Calculation line
-v = (math.pi * (w ** 2) * a * (w * a +2540 * d)) / 10_000_000_000
+    # Calculation line
+    v = (math.pi * (w ** 2) * a * (w * a +2540 * d)) / 10_000_000_000
 
-# uses an f string to insert v and format it to 2 decimals; leading "\n" adds the blank line shown in the sample
-print(f"\nThe approximate volume is {v:.2f} liters")
+    # uses an f string to insert v and format it to 2 decimals; leading "\n" adds the blank line shown in the sample
+    print(f"\nThe approximate volume is {v:.2f} liters")
 
 
 
-#**************************DATETIME****************************
+    #**************************DATETIME****************************
 
-# DateTime - Makes datetime.now() available to fetch today's date from the os clock
-from datetime import datetime
+    # DateTime - Makes datetime.now() available to fetch today's date from the os clock
+    from datetime import datetime
 
-# Calls datetime.now() to get a datetime object we can format as YYYY-MM-DD when writing the file
-current_dt = datetime.now()
+    # Calls datetime.now() to get a datetime object we can format as YYYY-MM-DD when writing the file
+    current_dt = datetime.now()
 
-# Provides a file handle named 'volumes_file', writable file
-with open("volumes.txt", "at") as volumes_file:
-    print(f'{current_dt:%Y-%m-%d}, {w}, {a}, {d}, {v:.2f}', file=volumes_file)
-    
-print(f"(Saved to) {Path('volumes.txt').resolve()}")
+    # Provides a file handle named 'volumes_file', writable file
+    with open("volumes.txt", "at") as volumes_file:
+        print(f'{current_dt:%Y-%m-%d}, {w}, {a}, {d}, {v:.2f}', file=volumes_file)
+        
+    print(f"(Saved to) {Path('volumes.txt').resolve()}")
+
+    # Ask the user if they want to test another set (condition controlled loop)
+    # End of each iteration, after writing to file
+
+again = input("Do you want to enter another set? (yes/no): ").strip().lower()
 
 
 
