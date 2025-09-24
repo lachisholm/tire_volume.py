@@ -72,6 +72,25 @@ while again =="yes":
     with open("volumes.txt", "at") as volumes_file:
         print(f'{current_dt:%Y-%m-%d}, {w}, {a}, {d}, {v:.2f}', file=volumes_file)
         
+    # WHAT: Read the user's answer ("yes" or "no") into a temporary variable for validation.
+    # WHEN: End of the loop iteration, after writing the record to volumes.txt.
+    # WHERE: Inside the while-loop, immediately after the with-block that appended to the file.
+    # DOES/MEANS: Normalize the input for comparison.
+    resp = input("Do you want to enter another set? (yes/no): ").strip().lower()
+
+    # WHAT: Validate the response; only accept "yes" or "no".
+    # WHEN: Immediately after capturing 'resp'.
+    # WHERE: Still inside the while-loop.
+    # DOES/MEANS: Re-prompt until the user types a valid answer.
+    while resp not in ("yes", "no"):
+        resp = input("Please type yes or no: ").strip().lower()
+
+    # WHAT: Update the loop-control flag with the validated response.
+    # WHEN: After validation succeeds.
+    # WHERE: Inside the while-loop.
+    # DOES/MEANS: 'yes' repeats; 'no' ends the loop naturally (no break).
+    again = resp
+        
     print(f"(Saved to) {Path('volumes.txt').resolve()}")
 
     # Ask the user if they want to test another set (condition controlled loop)
