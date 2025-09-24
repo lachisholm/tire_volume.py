@@ -44,5 +44,5 @@ d = float(input("Enter the diameter of the wheel in inches (ex 15): "))
 v = (math.pi * (w ** 2) * a * (w * a +2540 * d)) / 10_000_000_000
 
 # uses an f string to insert v and format it to 2 decimals; leading "\n" adds the blank line shown in the sample
-Print(f"\nThe approximate volume is {v:.2f} liters")
+print(f"\nThe approximate volume is {v:.2f} liters")
 
