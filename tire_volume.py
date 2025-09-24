@@ -19,6 +19,7 @@
 #   This is the exact formula we’ll implement in code below.
 # ─────────────────────────────────────────────────────────────────────────────
 
+or $$ v=\frac{\pi\, w^2\, a\,(w a + 2{,}540\, d)}{10{,}000{,}000{,}000} $$
 
 
 v is the volume in liters,
@@ -26,3 +27,22 @@ v is the volume in liters,
 w is the width of the tire in millimeters,
 a is the aspect ratio of the tire, and
 d is the diameter of the wheel in inches."""
+
+
+import math
+
+# capture the width of tire
+w= float(input("Enter the width of the tire in mm (ex. 205): "))
+
+# capture the aspect ratio
+a = float(input("Enter the aspect ratio of the tire (ex 60): "))
+
+#Shows the exact assignment prompt; float() converts the text to a numeric value
+d = float(input("Enter the diameter of the wheel in inches (ex 15): "))
+
+# Calculation line
+v = (math.pi * (w ** 2) * a * (w * a +2540 * d)) / 10_000_000_000
+
+# uses an f string to insert v and format it to 2 decimals; leading "\n" adds the blank line shown in the sample
+Print(f"\nThe approximate volume is {v:.2f} liters")
+
